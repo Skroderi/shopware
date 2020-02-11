@@ -1,19 +1,20 @@
 {extends file="parent:frontend/listing/index.tpl"}
 
+{block name='frontend_index_content'}
+    <div class="custom-listing">
+        {$smarty.block.parent}
+    </div>
+{/block}
+
+
 {block name="frontend_listing_list_inline"}
+{$productBoxLayout = "custom"}
     {debug}
-    <ul  class="listing-margin-fix">
-        {foreach $sArticles as $product}
-            <a href="{$product.linkDetails}">
-                <img srcset="{$product.image.thumbnails[0].sourceSet}" alt="">
-{*                <h2>{$product.articleName}</h2>*}
-{*                <h3>{$product.price|currency}</h3>*}
-
-            </a>
-            <hr>
+    <div class="custom-listing--listing"></div>
+        {foreach $sArticles as $sArticle}
+            {include file="frontend/listing/product-box/box-custom.tpl"}
         {/foreach}
-
-    </ul>
+    </div>
 {/block}
 
 {block name="frontend_index_content_left"}{/block}

@@ -37,7 +37,9 @@ class Theme extends \Shopware\Components\Theme{
     protected $license = '';
     protected $inheritanceConfig=false;
     protected $javascript =[
-        'src/js/jquery.helloworld.js'
+        'src/js/jquery.helloworld.js',
+        'src/js/jquery.cart-animation.js',
+        'src/js/jquery.slider-demo.js'
     ];
 
 public function createConfig(Form\Container\TabContainer $container)

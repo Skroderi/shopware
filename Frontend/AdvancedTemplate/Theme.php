@@ -39,7 +39,8 @@ class Theme extends \Shopware\Components\Theme{
     protected $javascript =[
         'src/js/jquery.helloworld.js',
         'src/js/jquery.cart-animation.js',
-        'src/js/jquery.slider-demo.js'
+        'src/js/jquery.slider-demo.js',
+        'src/js/jquery.scroll-nav.js'
     ];
 
 public function createConfig(Form\Container\TabContainer $container)
@@ -122,8 +123,22 @@ public function createConfig(Form\Container\TabContainer $container)
         );
 
 
+        $scrollNavField = $this->createCheckboxField(
+            'scrollNav',
+            'Scroll Navigation:',
+            false
+        );
+         $scrollNavDisplayPositionField = $this->createNumberField(
+             'scrollNavDisplayPosition',
+             'Display position:',
+             300
+         );
+
         $tab->addElement($settingsFieldset);
+
         $settingsFieldset->addElement($sloganField);
+        $settingsFieldset->addElement($scrollNavField);
+        $settingsFieldset->addElement($scrollNavDisplayPositionField);
 
         return $tab;
     }
